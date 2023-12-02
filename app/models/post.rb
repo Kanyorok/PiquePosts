@@ -6,8 +6,8 @@ class Post < ApplicationRecord
   validates :likes_count, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :comments_count, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def mostrecentcomments
-    comments.where(post_id: self[:id]).order(created_at: :desc).limit(5)
+  def mostrecentcomments(limit = 5)
+    comments.where(post_id: self[:id]).order(created_at: :desc).limit(limit)
   end
   after_save :incrementpostcounter
 

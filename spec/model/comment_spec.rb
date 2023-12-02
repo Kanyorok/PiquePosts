@@ -31,4 +31,11 @@ RSpec.describe Comment, type: :model do
     comment.post.comments_count = 'test'
     expect(comment.post).to_not be_valid
   end
+  describe 'after_save callback' do
+    it 'increments post\'s comments_counter after saving' do
+      expect do
+        post.comments.create(user:)
+      end.to change { post.reload.comments_count }.by(1)
+    end
+  end
 end
