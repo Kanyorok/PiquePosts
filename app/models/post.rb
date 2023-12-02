@@ -1,16 +1,19 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :user, foreign_key: 'author_id', counter_cache: true
   has_many :comments
   has_many :likes
+  validates :Title, presence: true, length: { maximum: 250 }
+  validates :likes_count, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :comments_count, presence: false, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def mostrecentcomments
-    comments.order(created_at: :desc).limit(5)
+    omments.where(post_id: self[:id]).order(created_at: :desc).limit(5)
   end
   after_create :incrementpostcounter
 
   private
 
   def incrementpostcounter
-    author.increment!(:posts_counter)
+    author.increment!(posts_counter: user.posts.size)
   end
 end
