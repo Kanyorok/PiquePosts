@@ -18,15 +18,15 @@ RSpec.describe User, type: :model do
   end
   it 'should return post count as one' do
     post = Post.create(title: 'hello', text: 'hello world test', author_id: user.id)
-    expect(post.user.posts_counter).to eq(1)
-    expect(post.user.posts.size).to eq(1)
+    expect(post.author.posts_count).to eq(1)
+    expect(post.author.posts.size).to eq(1)
   end
   it 'should be invalid on non integer post counter' do
-    user.posts_counter = 'dd'
+    user.posts_count = 'dd'
     expect(user).to_not be_valid
   end
   it 'should be invalid for  negetive integer post counter' do
-    user.posts_counter = -1
+    user.posts_count = -1
     expect(user).to_not be_valid
   end
 end

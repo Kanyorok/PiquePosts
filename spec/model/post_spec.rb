@@ -21,6 +21,6 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
   it 'should have post counter to 1' do
-    expect(post.user.posts_counter).to be(1)
+    expect(post.author.posts_count).to be(1)
   end
 end
