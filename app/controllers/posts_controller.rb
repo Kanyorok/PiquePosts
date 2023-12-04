@@ -1,16 +1,11 @@
 class PostsController < ApplicationController
-    def index
-    end
-    def show
+  def index; end
 
-    end
-    def new
+  def show; end
 
-    end
-    def create
+  def new; end
 
-    end
-    def destroy
-        
-    end
+  def create; end
+
+  def destroy; end
 end
