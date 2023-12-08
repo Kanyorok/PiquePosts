@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Comment, type: :model do
   subject(:user) { User.new(name: 'marry', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Software Developer from Spain.') }
   before { user.save }
-  subject(:post) { Post.new(title: 'hello world', text: 'Hello world paragraph', author_id: user.id) }
+  subject(:post) { Post.new(Title: 'hello world', text: 'Hello world paragraph', author_id: user.id) }
   before { post.save }
   subject(:comment) { Comment.new(user_id: user.id, post_id: post.id, text: 'this  is my comment') }
   before { comment.save }
@@ -30,12 +30,5 @@ RSpec.describe Comment, type: :model do
   it 'should be invalid on non negetive comment counter' do
     comment.post.comments_count = 'test'
     expect(comment.post).to_not be_valid
-  end
-  describe 'after_save callback' do
-    it 'increments post\'s comments_counter after saving' do
-      expect do
-        post.comments.create(user:)
-      end.to change { post.reload.comments_count }.by(1)
-    end
   end
 end

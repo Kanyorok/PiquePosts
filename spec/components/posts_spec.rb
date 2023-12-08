@@ -15,7 +15,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/The User Posts/)
+      expect(response.body).to match(/Show the user posts/)
     end
   end
 
