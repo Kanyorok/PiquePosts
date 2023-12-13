@@ -42,7 +42,7 @@ RSpec.describe 'userpage#index', type: :feature do
     end
     it 'redirects me to that users show page when I click on a user' do
       page.all('div.col-lg-12.border.border-dark').each_with_index do |el, _i|
-        within(el) { expect(page).to have_current_path(user_post_path(post.author, post)) }
+        within(el) { expect(page).to have_current_path(user_path(user)) }
       end
     end
   end
