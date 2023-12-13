@@ -21,7 +21,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /users/:id' do
     before :each do
-      get '/users/1'
+      get '/users/5'
     end
 
     it 'returns http success' do
@@ -33,7 +33,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Bio/)
+      expect(response.body).to match(/Number of Posts/)
     end
   end
 end
