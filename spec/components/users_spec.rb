@@ -15,7 +15,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/List of all Users/)
+      expect(response.body).to match(/All User Posts/)
     end
   end
 
@@ -33,7 +33,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Show User Profile/)
+      expect(response.body).to match(/Bio/)
     end
   end
 end

@@ -15,13 +15,13 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Show the user posts/)
+      expect(response.body).to match(/Number of Posts/)
     end
   end
 
   describe 'GET users/:user_id/posts/:id' do
     before :each do
-      get '/users/1/posts/1'
+      get '/users/5/posts/3'
     end
 
     it 'returns http success' do
@@ -33,7 +33,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Show specific post/)
+      expect(response.body).to match(/Comments/)
     end
   end
 end
