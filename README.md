@@ -127,6 +127,12 @@ To run tests, run the following command:
 - Twitter: [@CarlosMbugua](https://twitter.com/CarlosMbugua)
 - LinkedIn: [Robert Mbugua](https://www.linkedin.com/in/robert-mbugua-kanyoro/)
 
+👤 **Al Amin Khan Shakil**
+
+- GitHub: [Al Amin Khan Shakil](https://github.com/Al-Amin-Khan-Shakil)
+- Twitter: [Al Amin Khan Shakil](https://twitter.com/AlAminKhan85004)
+- LinkedIn: [Al Amin Khan Shakil](https://www.linkedin.com/in/al-amin-khan-shakil/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
