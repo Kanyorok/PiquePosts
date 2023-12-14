@@ -1,12 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  let(:user) { User.create(name: 'user1', posts_count: 0) }
-  let(:post) { user.posts.create(Title: 'title1', comments_count: 0, likes_count: 0) }
-
   describe 'GET users/:user_id/posts' do
     before :each do
-      get "/users/#{user.id}/posts"
+      get user_posts_path({ user_id: 426 })
     end
 
     it 'returns http success' do
@@ -24,7 +21,7 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET users/:user_id/posts/:id' do
     before :each do
-      get "/users/#{user.id}/posts/#{post.id}"
+      get '/users/426/posts/270'
     end
 
     it 'returns http success' do
@@ -36,7 +33,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'renders the correct text' do
-      expect(response.body).to match(/Likes/)
+      expect(response.body).to match(/The Formation/)
     end
   end
 end
