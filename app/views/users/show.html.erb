@@ -6,7 +6,9 @@
     <div class="card my-4">
       <%= render partial: 'bio', locals: { user: @user } %>
     </div>
-    <%= link_to "Add a new post", new_user_post_path(user_id: @user.id), class: "btn btn-primary"%>
+    <% if @user.id == current_user.id || current_user.admin? %>
+      <%= link_to "Add a new post", new_user_post_path(user_id: @user.id), class: "btn btn-primary"%>
+    <% end %>
     <% if @posts.any? %>
       <div class="post-list">
         <% @user.recentposts.each do |post| %>
