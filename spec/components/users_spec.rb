@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  let(:user) { User.create(name: 'Name 1', posts_count: 0) }
   describe 'GET /' do
     before :each do
       get '/users'
@@ -22,7 +21,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /users/:id' do
     before :each do
-      get "/users/#{user.id}"
+      get '/users/426'
     end
 
     it 'returns http success' do
