@@ -30,4 +30,18 @@ class Api::V1::CommentsController < ApplicationController
   def destroy
     @comment.destroy
   end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:text, :user_id)
+  end
+
+  def user
+    @user = User.find(params[:user_id])
+  end
+
+  def post
+    @post = Post.find(params[:post_id])
+  end
 end
