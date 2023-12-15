@@ -114,6 +114,43 @@ To run tests, run the following command:
 ```sh
   rspec --format documentation
 ```
+And to run the api test you can follow the command:
+
+- Run this url in your browser to see all comments for a post
+```sh
+http://localhost:3000/api/v1/users/:user_id/posts/:post_id/comments
+```
+- Run this url in your browser to see all posts for a user
+```sh
+http://localhost:3000/api/v1/users/:user_id/posts
+```
+- Run this code in your browser console to add new comment 
+```sh
+1st run the server and visit the localhost in you browser
+2nd open the console and run the following code in your browser console
+------------------------------------------------------------------------
+const user_id = 1; // Replace with the actual user ID
+const post_id = 1; // Replace with the actual post ID
+const commentText = "Your comment text"; // Replace with the actual comment text
+
+fetch(`http://localhost:3000/api/v1/users/${user_id}/posts/${post_id}/comments`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    comment: {
+      text: commentText,
+      user_id: user_id,
+      post_id: post_id,
+    },
+  }),
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
