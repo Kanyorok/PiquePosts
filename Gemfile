@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.2'
+ruby '3.0.2'
 
 # Rubocop gemfile
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -32,6 +32,8 @@ gem 'jbuilder'
 
 # Use the devise gem as the session and account manager for the application
 gem 'devise', '~> 4.9'
+
+gem 'cancancan'
 
 # use the gem to add pagination to the app
 gem 'will_paginate'
